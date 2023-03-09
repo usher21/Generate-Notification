@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --success: #2ecc71;
+    --warning: #FFC300;
+    --danger: #e74c3c;
+    --info: #3498db;
+}
+
+body {
+    font-family: 'Lato';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #F1F1F1;
+    padding: 2rem 0;
+}
+
+.container button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    color: #FFF;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container button.success {
+    background-color: var(--success);
+    box-shadow: 0 0 10px var(--success);
+}
+
+.container button.danger {
+    background-color: var(--danger);
+    box-shadow: 0 0 10px var(--danger);
+}
+
+.container button.warning {
+    background-color: var(--warning);
+    box-shadow: 0 0 10px var(--warning);
+}
+
+.container button.info {
+    background-color: var(--info);
+    box-shadow: 0 0 10px var(--info);
+}
+
+.alert-container {
+    width: 400px;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.alert-container .alert {
+    width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    left: 100%;
+}
+
+.alert-container .alert.active {
+    animation: appear .5s ease forwards;
+}
+
+.alert-container .alert.inactive {
+    animation: disappear .5s ease forwards;
+}
+
+@keyframes appear {
+    0% {
+        left: 100%;
+    } 40% {
+        left: -10px;
+    } 80% {
+        left: 10px;
+    } 100% {
+        left: 0;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        left: 0;
+    } 40% {
+        left: 10px;
+    } 80% {
+        left: -10px;
+    } 100% {
+        left: 100%;
+    }
+}
+
+.alert-container .alert i {
+    margin-right: 1rem;
+}
+
+.alert-container .alert .close {
+    position: relative;
+    right: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.alert.success {
+    border: 3px solid var(--success);
+    color: var(--success);
+}
+
+.alert.danger {
+    border: 3px solid var(--danger);
+    color: var(--danger);
+}
+
+.alert.warning {
+    border: 3px solid var(--warning);
+    color: var(--warning);
+}
+
+.alert.info {
+    border: 3px solid var(--info);
+    color: var(--info);
+}
